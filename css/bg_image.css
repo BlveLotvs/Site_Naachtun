@@ -1,0 +1,20 @@
+body {
+    padding-top: 56px;
+    background-image: url('img/bg_naachtun.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: bottom;
+    ;
+    position: relative;
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(159, 140, 137, 0.333);
+    z-index: -1;
+}
