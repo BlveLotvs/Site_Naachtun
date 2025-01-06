@@ -1,0 +1,8 @@
+{
+"type": "FeatureCollection",
+"name": "site_naachtun",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Naachtun", "descriptio": "\n      San Jose, Peten, Guatemala  (Rank 3)\n      <br/>\n      <br/>Ref. 1991,IGM, IAH GT Map\n      \n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.73556, 17.79005, 0.0 ] } }
+]
+}
