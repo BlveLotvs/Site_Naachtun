@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Naachtun - Méthodologie</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/bg_image.css" rel="stylesheet">
+    <link href="css/styles_carto.css" rel="stylesheet">
+    <style>
+        #mindmap {
+            height: 600px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background: white;
+            margin: 20px 0;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+    </style>
+</head>
+<body>
+    <!-- En-tête avec navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Projet Naachtun</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="methodo_results.html">Méthodologie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resultats.html">Résultats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="carto.html">Cartes et Analyses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="data.html">Données et Sources</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container mt-4">
+        <section>
+            <h1 class="my-4">Méthodologie</h1>
+            <h2>Chaîne de traitements</h2>
+            <p>Le diagramme ci-dessous illustre les différentes étapes méthodologiques du projet Naachtun.</p>
+            <div id="mindmap"></div>
+            <p>Voici les différentes étapes méthodologiques et les résultats obtenus lors de ce projet sur les dynamiques environnementales et le patrimoine Maya.</p>
+
+            <div class="separator"></div>
+        </section>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer text-center py-3">
+        <p>&copy; 2024 Projet Naachtun</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://d3js.org/d3.v6.min.js"></script>
+    <script src="js/mindmaps2.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- <script src="js/mindmap.js"></script> -->
+</body>
+</html>

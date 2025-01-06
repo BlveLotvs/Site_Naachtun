@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Projet Naachtun - Accueil</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <link href="css/bg_image.css" rel="stylesheet">
+    <link href="css/styles_carto.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+</head>
+
+<body>
+    <!-- En-tête avec navigation -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="#">Projet Naachtun</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item"><a class="nav-link" href="methodo_results.html">Méthodologie</a></li>
+                    <li class="nav-item"><a class="nav-link" href="resultats.html">Résultats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="carto.html">Cartes et analyses</a></li>        
+                    <li class="nav-item"><a class="nav-link" href="data.html">Données et sources</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Contenu principal -->
+    <main class="container-fluid">
+        <div class="row">
+            <!-- Colonne gauche : Objectifs et Contexte -->
+            <div class="col-md-6">
+                <section class="context-section">
+                    <h2>Contexte du projet</h2>
+                    <p>Ce projet de recherche vise à explorer les dynamiques environnementales et le patrimoine hybride naturel et culturel de la région de Naachtun, une ancienne cité Maya située au cœur de la réserve de biosphère Maya dans la forêt tropicale du Petén, au Guatemala. À travers une approche combinant données LIDAR, analyses géospatiales et indices topographiques, notre objectif est de mieux comprendre les interactions entre les civilisations anciennes et leur environnement.</p>
+
+                    <h2>Problématique</h2>
+                    <p>Dans un contexte environnemental complexe de forêt tropicale dense, comment utiliser les technologies modernes – notamment l’imagerie LiDAR et les analyses de données satellite – pour identifier, comprendre et valoriser les vestiges du socio-écosystème maya de Naachtun (1500 BCE – 1000 CE), marqué par des aménagements sophistiqués et une exploitation des ressources naturelles aujourd’hui enfouis sous une végétation dense, tout en tenant compte de la dynamique historique et environnementale du territoire ?</p>
+
+                    <h2>Objectifs du Projet</h2>
+                    <ul>
+                        <li>Cartographier les zones basses et planes, ainsi que les terrasses et réservoirs liés à l’hydraulique Maya.</li>
+                        <li>Analyser les dynamiques hydrologiques, les potentiels d'humidité des sols et les impacts socio-environnementaux.</li>
+                        <li>Utiliser des données issues de technologies avancées telles que le LIDAR pour produire des visualisations détaillées.</li>
+                    </ul>
+                    <p>Les résultats obtenus permettront d’améliorer notre compréhension des choix d’aménagement des Mayas en lien avec les contraintes environnementales et les changements climatiques.</p>
+                </section>
+            </div>
+
+            <!-- Colonne centrale : Carte -->
+            <div class="col-md-6">
+                <section class="map-section">
+                    <h2>Carte Interactive</h2>
+                    <p>Explorez la région de Naachtun et visualisez les zones d’intérêt grâce à cette carte interactive.</p>
+                    <div id="map"></div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <!-- Pied de page -->
+    <footer class="footer text-center py-3">
+        <p>&copy; 2024 Projet Naachtun | M2 G2M</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script src="leaflet/init_leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
