@@ -1,0 +1,162 @@
+body {
+    font-family: system-ui;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+
+.navbar-brand {
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.card {
+    margin: 15px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+    background-color: #f9f9f9;
+    font-weight: bold;
+}
+
+/* Sections (objectifs, technologies, etc.) */
+.context-section, .project-goals, .technologies, .map-section {
+    margin-bottom: 20px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Carte interactive */
+#map {
+    width: 100%;
+    height: 450px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+/* Légende de la carte */
+.map-legend {
+    background: white;
+    padding: 10px;
+    line-height: 18px;
+    color: #555;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.map-legend span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    margin-right: 10px;
+}
+
+/* Liste */
+ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+ul li {
+    margin-bottom: 10px;
+}
+
+/* Bouton primaire */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+}
+
+/* Pied de page */
+footer {
+    background-color: #eee;
+    padding: 15px 0;
+    margin-top: 20px;
+    text-align: center;
+}
+
+/* Conteneur principal */
+.container-fluid {
+    margin-top: 20px;
+}
+
+/* Conteneurs principaux */
+.container {
+    margin-top: 20px;
+}
+
+/* Titres */
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+/* Liste des cartes */
+.list-group-item {
+    margin-bottom: 5px;
+    border-radius: 5px;
+}
+
+/* Bouton actif */
+.list-group-item-action:hover {
+    background-color: #f0f0f0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .context-section, .map-section {
+        margin-bottom: 20px;
+    }
+    #map {
+        height: 300px; /* Hauteur réduite pour les écrans petits */
+    }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    h1, h2 {
+        font-size: 1.5em;
+    }
+    .list-group-item {
+        font-size: 0.9em;
+    }
+}
+
+#treatment-chart {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background: #fff;
+    padding: 20px;
+    margin: 20px 0;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    #treatment-chart {
+        height: 300px; /* Hauteur réduite pour les écrans petits */
+    }
+}
+
+canvas {
+    margin: 20px 0;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
