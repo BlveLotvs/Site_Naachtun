@@ -1,0 +1,23 @@
+{
+"type": "FeatureCollection",
+"name": "rang1",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Calakmul", "descriptio": "\n       \n      Champoton, Campeche, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Mayer 2006\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.81033333, 18.1045, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Caracol", "descriptio": "\n       \n      , Cayo, Belize  (Rank 1)\n      <br/>\n      <br/>Ref. Witschey 2009\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.1176, 16.76395, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Chichen Itza", "descriptio": "\n       \n      Tinum, Yucatan, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Witschey 2009\n\t" }, "geometry": { "type": "Point", "coordinates": [ -88.5686, 20.68287, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Coba", "descriptio": "\n       \n      Solidaridad, Quintana Roo, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Witschey 2001\n\t" }, "geometry": { "type": "Point", "coordinates": [ -87.73307, 20.49104, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Comalcalco", "descriptio": "\n       \n      Comalcalco, Tabasco, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Witschey 2009\n\t" }, "geometry": { "type": "Point", "coordinates": [ -93.20184, 18.28007, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Copan", "descriptio": "\n       \n      Copan Ruinas, Copan, Honduras  (Rank 1)\n      <br/>\n      <br/>Ref. Witschey 2009\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.13885, 14.84107, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "El Mirador", "descriptio": "\n       \n      San Andres, Peten, Guatemala  (Rank 1)\n      <br/>\n      <br/>Ref. Witschey 2009\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.92307, 17.75482, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Izamal", "descriptio": "\n       \n      Izamal, Yucatan, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Covarrubias,  Villanueva 2008\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.017109170500007, 20.937062729699999, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Kaminaljuyu", "descriptio": "\n       \n      Guatemala, Guatemala, Guatemala  (Rank 1)\n      <br/>\n      <br/>Ref. Mayer 2006\n\t" }, "geometry": { "type": "Point", "coordinates": [ -90.549, 14.63283333, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Nakbe", "descriptio": "\n       \n      San Jose, Peten, Guatemala  (Rank 1)\n      <br/>\n      <br/>Ref. 1991,IGM, IAH GT Map\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.83778, 17.67269, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Palenque", "descriptio": "\n       \n      Palenque, Chiapas, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Mayer 2006\n\t" }, "geometry": { "type": "Point", "coordinates": [ -92.04583333, 17.484, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Piedras Negras", "descriptio": "\n       \n      La Libertad, Peten, Guatemala  (Rank 1)\n      <br/>\n      <br/>Ref. Witschey 2009\n\t" }, "geometry": { "type": "Point", "coordinates": [ -91.26298, 17.16641, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Tiho", "descriptio": "\n       \n      Merida, Yucatan, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Garza and Kurjack 1980\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.620750185100491, 20.970704367280007, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Tikal", "descriptio": "\n       \n      Flores, Peten, Guatemala  (Rank 1)\n      <br/>\n      <br/>Ref. 1991,IGM, IAH GT Map\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.63163, 17.21732, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Uxmal", "descriptio": "\n       \n      Santa Elena, Yucatan, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Witschey 2009\n\t" }, "geometry": { "type": "Point", "coordinates": [ -89.77066, 20.36031, 0.0 ] } },
+{ "type": "Feature", "properties": { "Name": "Yaxchilan", "descriptio": "\n       \n      Ocosingo, Chiapas, Mexico  (Rank 1)\n      <br/>\n      <br/>Ref. Mayer 2006\n\t" }, "geometry": { "type": "Point", "coordinates": [ -90.9675, 16.89616667, 0.0 ] } }
+]
+}
