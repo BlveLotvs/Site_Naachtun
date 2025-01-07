@@ -160,3 +160,26 @@ canvas {
     border-radius: 8px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+.main-title {
+    background: rgba(0, 0, 0, 0.7); /* Fond semi-transparent pour contraste */
+    color: #ffd700; /* Or Maya pour le texte */
+    text-align: center;
+    padding: 20px;
+    margin: 10px 0;
+    border-radius: 8px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-title h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.main-title p {
+    font-size: 1.2rem;
+    font-style: italic;
+    margin: 0;
+    color: #fff;
+}

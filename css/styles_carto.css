@@ -9,11 +9,32 @@
         }
 
         .content-section {
-            background: rgba(0, 0, 0, 0.6);
+            background: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
             padding: 20px;
             border-radius: 8px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            color: #fff;
+            margin-top: 20px;
         }
+        
+        .content-section h2 {
+            color: #ffd700; /* Or Maya */
+            margin-bottom: 15px;
+        }
+        
+        .content-section ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+        
+        .content-section ul li {
+            margin-bottom: 10px;
+        }
+        
+        .content-section strong {
+            color: #ffd700; /* Accentuer les titres dans les listes */
+        }
+        
 
         h1, h2 {
             color: #ffd700; /* Or Maya */
