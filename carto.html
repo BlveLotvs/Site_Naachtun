@@ -182,6 +182,36 @@
                 </div>
             </div>
         </div>
+    <!-- Section Analyses et Conclusions -->
+    <div class="content-section mt-5">
+        <h2 class="text-center">Analyses</h2>
+        <p class="text-justify">
+            Cette section présente les analyses effectuées à partir des cartes et des données LiDAR et JAXA. Les indices topographiques (TWI, MRRTF, MRVBF) ont permis d’identifier les zones basses et planes, ainsi que les structures anthropiques cachées sous la végétation dense. En complément, les analyses avec R ont mis en lumière les corrélations entre les différentes échelles de données, illustrées par les graphiques ci-dessous.
+        </p>
+
+        <!-- Graphique 1 -->
+        <div class="text-center">
+            <img src="images/interpolation_graph1.png" alt="Graphique d'interpolation LiDAR et JAXA" class="img-fluid mb-4">
+        </div>
+        <p>
+            <strong>Analyse :</strong> Le premier graphique montre qu’il n’existe pas de corrélation positive forte entre les indices calculés à partir des données JAXA et LiDAR. Cela indique qu’une simple interpolation des données JAXA ne suffit pas à reproduire les détails détectés par le LiDAR. Un affinage des modèles est donc nécessaire pour améliorer la précision.
+        </p>
+
+        <!-- Graphique 2 -->
+        <div class="text-center">
+            <img src="images/interpolation_graph2.png" alt="Graphique des indices topographiques LiDAR et JAXA" class="img-fluid mb-4">
+        </div>
+        <p>
+            <strong>Conclusion :</strong> Le second graphique montre que l’ajout d’indices topographiques supplémentaires, tels que le MrVBF et le MrRTF, améliore la corrélation entre les deux échelles. Bien que la corrélation reste modérée (par exemple, 53 % entre MrVBF LiDAR et JAXA), ces résultats démontrent l’importance de combiner plusieurs indices pour obtenir une vision plus cohérente des caractéristiques du terrain.
+        </p>
+
+        <!-- Synthèse -->
+        <p class="mt-4">
+            Ces analyses mettent en évidence les défis liés à l’interpolation et à la fusion des données issues de différentes sources et échelles. Elles montrent également l’importance des indices topographiques pour révéler les interactions complexes entre les Mayas et leur environnement. Les résultats obtenus serviront de base pour des recherches futures, notamment pour affiner les modèles hydrologiques et identifier les structures agraires anciennes.
+        </p>
+    </div>
+
+        
     </main>
 
     <!-- Pied de page -->
