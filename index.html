@@ -13,14 +13,14 @@
 <body>
     <!-- En-tête avec navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <a class="navbar-brand" href="#">Projet Naachtun</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                    <li class="nav-item-active"><a class="nav-link" href="index.html">Accueil</a></li>
                     <li class="nav-item"><a class="nav-link" href="methodo_results.html">Méthodologie</a></li>
                     <li class="nav-item"><a class="nav-link" href="resultats.html">Résultats</a></li>
                     <li class="nav-item"><a class="nav-link" href="carto.html">Cartes et analyses</a></li>        
@@ -42,37 +42,73 @@
             <div class="col-md-6">
                 <section class="context-section">
                     <h2>Contexte du projet</h2>
-                    <p>Ce projet de recherche vise à explorer les dynamiques environnementales et le patrimoine hybride naturel 
-                        et culturel de la région de Naachtun, 
-                        une ancienne cité Maya située au cœur de la réserve de biosphère Maya dans la forêt tropicale du Petén, 
-                        au Guatemala. À travers une approche combinant données LIDAR, analyses géospatiales et indices topographiques, 
-                        notre objectif est de mieux comprendre les interactions entre les civilisations anciennes et leur environnement.
+                    <p>
+                        Au cœur de l’Amérique centrale, à la jonction du Bélize, du Guatemala et du Mexique, se trouve la région des Basses Terres Maya, 
+                        un vaste territoire recouvert d’une forêt tropicale dense. Cette région a été le berceau de l’une des plus grandes civilisations précolombiennes. 
+                        Entre 1000 av. J.-C. et 900 apr. J.-C., le peuple Maya a construit un patrimoine culturel et archéologique d’une richesse exceptionnelle, 
+                        aujourd’hui largement enfoui sous la végétation.
                     </p>
-
+                    <p>
+                        Dans le cadre des programmes PLI2 (Pacunam LiDAR Initiative), des relevés LiDAR aéroportés ont permis de révéler des vestiges jusqu’ici invisibles. 
+                        Le projet, vise à explorer ces données ainsi que les photos-satellites pour mieux comprendre les dynamiques environnementales 
+                        et les interactions entre les Mayas et leur environnement.
+                    </p>
+                    <!-- Frise chronologique -->
+                    <h2>Frise chronologique </h2>
+                    <div class="text-center mb-4">
+                        <img src="frise.png" alt="Frise chronologique des civilisations mésoaméricaines" class="img-fluid">
+                    </div>
+                    <p>
+                        Frise de l'histoire des Mayas (source : Wikipedia)
+                    </p>
+                   
                     <h2>Problématique</h2>
-                    <p>En utilisant les technologies modernes d’imageries LiDAR aéroportés et d’images satellitaires, 
-                        comment discriminer les dépressions et les plateaux de la forêt guatémaltèque du Nord Petén, 
-                        puis établir une visualisation favorable à la détection de vestiges archéologiques du socio-écosystème 
-                        de Naachtùn ?</p>
-
+                    <p>
+                        En utilisant les technologies modernes d’imageries LiDAR aéroportés et d’images satellitaires, comment discriminer les dépressions (zones humides) 
+                        et les plateaux (zones sèches) de la forêt guatémaltèque du Nord Petén, puis établir une visualisation favorable à la détection de vestiges 
+                        archéologiques du socio-écosystème de Naachtùn ?
+                    </p>
+            
                     <h2>Objectifs du Projet</h2>
                     <ul>
-                        <li>Cartographier les zones basses et planes, ainsi que les terrasses et réservoirs liés à l’hydraulique Maya.</li>
-                        <li>Analyser les dynamiques hydrologiques, les potentiels d'humidité des sols et les impacts socio-environnementaux.</li>
-                        <li>Utiliser des données issues de technologies avancées telles que le LIDAR pour produire des visualisations détaillées.</li>
+                        <li>Cartographier les dépressions et plateaux, ainsi que les terrasses et réservoirs liés aux infrastructures hydrauliques mayas.</li>
+                        <li>Analyser les dynamiques hydrologiques et les potentiels d’humidité des sols.</li>
+                        <li>Spatialiser les vestiges archéologiques (terrasses, réservoirs, murets) à travers des visualisations avancées (RRIM, MRVBF, MRRTF).</li>
+                        <li>Évaluer la transposabilité des indices calculés sur la PLI1 (125 km²) à la PLI2 (500 km²).</li>
                     </ul>
-                    <p>Les résultats obtenus permettront d’améliorer notre compréhension des choix d’aménagement des Mayas en lien avec les contraintes environnementales et les changements climatiques.</p>
+                    <p>
+                        Ces résultats permettront de mieux comprendre l’aménagement des Mayas et leurs stratégies d’adaptation aux contraintes environnementales, 
+                        tout en apportant des éléments nouveaux sur leurs interactions avec l’environnement.
+                    </p>
                 </section>
             </div>
+            
 
-            <!-- Colonne centrale : Carte -->
-            <div class="col-md-6">
-                <section class="map-section">
-                    <h2>Carte Interactive</h2>
-                    <p>Explorez la région de Naachtun et visualisez les zones d’intérêt grâce à cette carte interactive.</p>
-                    <div id="map"></div>
-                </section>
+    <!-- Colonne centrale : Carte -->
+    <div class="col-md-6">
+        <section class="map-section">
+            <h2>Carte Interactive</h2>
+            <p>Explorez la région de Naachtun et visualisez les zones d’intérêt grâce à cette carte interactive.</p>
+            <div id="map"></div>
+            <!-- Description des zones d'étude -->
+            <div class="map-description mt-4">
+                <h3>Description des zones d'étude</h3>
+                <p>
+                    La carte interactive présente les principales zones d'étude dans le cadre des programmes PLI1 et PLI2 (Pacunam LiDAR Initiative) :
+                </p>
+                <ul>
+                    <li><strong>Zone Échelle 1 (PLI1) :</strong> Représente une surface de 125 km² autour du site principal de Naachtun, analysée avec des données LiDAR haute résolution.</li>
+                    <li><strong>Zone Échelle 2 (PLI2) :</strong> Étend l'analyse à 500 km², couvrant une zone plus large avec des images satellitaires JAXA combinées aux données LiDAR.</li>
+                    <li><strong>Zone Échelle 3 :</strong> Permet une couverture encore plus vaste grâce à des données multispectrales Sentinel-2 et PALSAR pour une analyse environnementale globale.</li>
+                </ul>
+                <p>
+                    Le <strong>site principal de Naachtun</strong>, situé au centre de la région d'étude, a joué un rôle clé dans les dynamiques géopolitiques de la période classique. 
+                    Les sites de rang 1 et 2 indiquent des centres secondaires et tertiaires, apportant des informations sur l'organisation sociopolitique des Basses Terres Maya.
+                </p>
             </div>
+        </section>
+    </div>
+
         </div>
     </main>
 

@@ -17,12 +17,30 @@
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             overflow: hidden;
         }
+        .main-title h1 {
+            font-style: italic;
+            color: yellow;
+            text-shadow: 2px 2px 4px black;
+        }
+
+        .content-section h2 {
+            color: yellow;
+            text-shadow: 1px 1px 3px black;
+        }
+
+        .content-section {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
     </style>
 </head>
 <body>
     <!-- En-tête avec navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <a class="navbar-brand" href="#">Projet Naachtun</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -42,23 +60,18 @@
     <!-- Contenu principal -->
     <main class="container mt-4">
         <section>
-            <h1 class="my-4">Méthodologie</h1>
-            <h2>Chaîne de traitements</h2>
-            <p>Le diagramme ci-dessous illustre les différentes étapes méthodologiques du projet Naachtun.</p>
-            <div id="mindmap"></div>
-            <p>Voici les différentes étapes méthodologiques et les résultats obtenus lors de ce projet 
-                sur les dynamiques environnementales et le patrimoine Maya.</p>
+            <div class="main-title text-center mb-4">
+                <h1>Méthodologie générale</h1>
+            </div>
+            
             <div class="content-section">
                 <h2>Acquisition des données</h2>
                 <p>Pour explorer le territoire de Naachtun, nous avons combiné les données disponibles, incluant :</p>
                 <ul>
-                    <li><strong>Des couches de LiDAR :</strong> couvrant 135 km² à 500 km², 
-                        cette technologie a permis de cartographier la topographie 
-                        et de détecter des structures enfouies sous la végétation dense.</li>
-                    <li><strong>Images satellites :</strong> données issues des programmes JAXA (12,5 m) 
-                        et Sentinel-2 (10 m) pour compléter les zones plus vastes  non couvertes par le LiDAR.</li>
+                    <li><strong>Des couches de LiDAR :</strong> couvrant 135 km² à 500 km², cette technologie a permis de cartographier la topographie et de détecter des structures enfouies sous la végétation dense.</li>
+                    <li><strong>Images satellites :</strong> données issues des programmes JAXA (12,5 m) et Sentinel-2 (10 m) pour compléter les zones plus vastes non couvertes par le LiDAR.</li>
                 </ul>
-        
+
                 <h2>Prétraitement des données</h2>
                 <p>Avant d’effectuer les analyses, plusieurs prétraitements ont été nécessaires :</p>
                 <ul>
@@ -66,27 +79,22 @@
                     <li>Réechantillonnage des données JAXA pour homogénéiser les données.</li>
                     <li>Reprojection des données dans le système de coordonnées UTM16 correspondant à la zone d'étude.</li>
                 </ul>
-        
+
                 <h2>Analyses spatiales et calculs d’indices</h2>
                 <p>Les analyses spatiales ont permis de révéler des informations cruciales sur le territoire étudié :</p>
                 <ul>
-                    <li><strong>Indices topographiques :</strong> calcul du TWI (Indice d’Humidité Topographique), 
-                        MRVBF (indice des bas-fonds), 
-                        et des pentes avec SAGA et ArcGIS pour discriminer les zones planes (bajos) des zones hautes (altos).</li>
-                    <li><strong>Hydrologie :</strong> délimitation des bassins versants 
-                        et identification des réseaux hydrographiques pour comprendre les dynamiques d’écoulement.</li>
-                    <li><strong>Indices de végétation :</strong> NDVI et NDWI pour différencier les zones végétalisées humides 
-                        et sèches.</li>
+                    <li><strong>Indices topographiques :</strong> calcul du TWI (Indice d’Humidité Topographique), MRVBF (indice des bas-fonds), et des pentes avec SAGA et ArcGIS pour discriminer les zones planes (bajos) des zones hautes (altos).</li>
+                    <li><strong>Hydrologie :</strong> délimitation des bassins versants et identification des réseaux hydrographiques pour comprendre les dynamiques d’écoulement.</li>
+                    <li><strong>Indices de végétation :</strong> NDVI et NDWI pour différencier les zones végétalisées humides et sèches.</li>
                 </ul>
-        
+
                 <h2>Visualisations avancées</h2>
                 <p>Pour une interprétation plus fine des résultats, nous avons utilisé des techniques de visualisation avancées :</p>
                 <ul>
                     <li>Ombrages multiples pour mettre en relief les structures topographiques.</li>
                     <li>Modèle d’Image Relief Rouge (RRIM) pour visualiser les aménagements anciens et les terrassements.</li>
-                    <li>Sky-View Factor et indices d’ouverture positive et négative pour accentuer les détails topographiques.</li>
                 </ul>
-        
+
                 <h2>Résultats attendus</h2>
                 <p>Ce processus méthodologique vise à produire des résultats détaillés, tels que :</p>
                 <ul>
@@ -94,10 +102,13 @@
                     <li>L’analyse des dynamiques hydrologiques en lien avec les aménagements mayas.</li>
                     <li>La comparaison et le croisement entre données LiDAR et images satellites JAXA dans les analyses.</li>
                 </ul>
-                <p>Ces résultats permettront d’approfondir notre compréhension des interactions entre les Mayas 
-                    et leur environnement tout en valorisant leur patrimoine naturel et culturel.</p>
+                <p>Ces résultats permettront d’approfondir notre compréhension des interactions entre les Mayas et leur environnement tout en valorisant leur patrimoine naturel et culturel.</p>
             </div>
             <div class="separator"></div>
+            <h2>Chaîne de traitements</h2>
+            <p>Le diagramme ci-dessous illustre les différentes étapes méthodologiques du projet Naachtun.</p>
+            <div id="mindmap"></div>
+            <p>Voici les différentes étapes méthodologiques et les résultats obtenus lors de ce projet sur les dynamiques environnementales et le patrimoine Maya.</p>
         </section>
     </main>
 

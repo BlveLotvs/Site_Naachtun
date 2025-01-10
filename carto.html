@@ -1,18 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <title>Projet Naachtun - Cartes et Analyses</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/styles.css" rel="stylesheet">
     <link href="css/bg_image.css" rel="stylesheet">
-    <link href="css/styles_carto.css" rel="stylesheet">
+    <style>
+        /* Styles généraux */
+        body {
+            font-family: system-ui, sans-serif;
+            background-image: url("css/img/bg_naachtun.jpg");
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container-fluid {
+            max-width: 1200px;
+            margin: 1 auto;
+        }
+
+        .content-section {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .content-section h1,
+        .content-section h2 {
+            color: #ffd700;
+        }
+
+        .content-section h1 {
+            text-align: center;
+        }
+
+        /* Grille principale */
+        .row {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 20px; /* Espacement horizontal entre colonnes */
+        }
+
+        .col-md-4 {
+            flex: 0 0 calc(33.333% - 20px); /* Chaque colonne prend 1/3 avec espace entre */
+            max-width: calc(33.333% - 20px);
+            box-sizing: border-box;
+        }
+
+        .list-group-item {
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+            margin-bottom: 10px;
+            text-decoration: none;
+            padding: 10px 15px;
+        }
+
+        .list-group-item:hover {
+            background: rgba(255, 255, 255, 0.2);
+            color: #ffd700;
+        }
+
+        .btn {
+            margin-top: 10px;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn:hover {
+            background: #0056b3;
+        }
+
+        .comment-section {
+            display: none;
+            margin-top: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 5px;
+        }
+        .btn-vegetation {
+            background-color: #28a745; /* Vert pour la végétation */
+        }
+
+        .btn-vegetation:hover {
+            background-color: #218838;
+        }
+
+        .btn-topographique {
+            background-color: #dc3545; /* Rouge pour la topographie */
+        }
+
+        .btn-topographique:hover {
+            background-color: #c82333;
+        }
+
+        .btn-hydrologie {
+            background-color: #007bff; /* Bleu pour l'hydrologie */
+        }
+
+        .btn-hydrologie:hover {
+            background-color: #0056b3;
+        }
+
+        /* Légende */
+        .legend-section {
+            background: rgba(0, 0, 0, 0.6);
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+
+        footer {
+            background: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        
+
+        
+    </style>
 </head>
 
 <body>
     <!-- En-tête avec navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <a class="navbar-brand" href="#">Projet Naachtun</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -30,199 +172,175 @@
     </header>
 
     <!-- Contenu principal -->
-    <main class="container mt-4">
+    <div class="container-fluid mt-4">
         <div class="content-section">
-            <h1 class="text-center mb-4">Cartes et Analyses</h1>
-            <p class="text-center">Explorez les cartes issues des analyses LiDAR et Satellites, réparties en deux colonnes principales. Cliquez sur les liens pour voir les fichiers PDF ou PNG correspondants.</p>
+            <h1>Cartes et Analyses</h1>
+            <p class="text-center">Explorez les cartes issues des analyses LiDAR et Satellites (Jaxa ou SENTINEL), 
+                et des traitements combinés. Cliquez sur les liens pour voir les cartes correspondantes avec leur description.</p>
         </div>
 
-        <div class="row mt-4">
+        <div class="row">
             <!-- Colonne LiDAR -->
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="content-section">
                     <h2 class="text-center">Données LiDAR</h2>
                     <div class="list-group">
-                        <a href="maps/LIDAR/map_ombrage.png" class="list-group-item">Carte Ombrage (PNG)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc1')">Afficher la description</button>
-                        <div id="desc1" class="comment-section" style="display: none;">
-                            Carte d’ombrage générée à partir des données LiDAR. 
-                            Elle permet d'identifier les structures topographiques en détail grâce à un éclairage simulé.
-                        </div>
+                        <a href="maps/LIDAR/OmbrageLidar.pdf" class="list-group-item">Carte Ombrage (PNG)</a>
+                        <button class="btn btn-sm btn-topographique mt-2" onclick="toggleDescription('desc1')">Afficher la description</button>
+                        <div id="desc1" class="comment-section">Carte d’ombrage générée à partir des données LiDAR. 
+                            Elle permet d'identifier les structures topographiques en détail 
+                            grâce à un éclairage simulé.</div>
                         
-                        <a href="maps/LIDAR/MRRTF_Est.pdf" class="list-group-item">MRRTF (Partie EST) (PDF)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc2')">Afficher la description</button>
-                        <div id="desc2" class="comment-section" style="display: none;"> 
-                            MrRTF : Cette carte représente l'indice multi-résolution de planéité 
-                            de la crête (MrRTF), 
-                            mettant en évidence les zones de crêtes bien définies (en rouge) par rapport aux pentes 
-                            et aux zones plus basses (en bleu). 
-                            Nous pouvons constater que la morphologie du relief présente une partie haute et plane 
-                            et une partie plus encaissée comportants des zones basses encaissées.
-
-                            Sources : PACUNAM, JAXA
-                            
-                        </div>
-                        
-                        <a href="maps/LIDAR/MRRTF.pdf" class="list-group-item">MRRTF (PDF)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc3')">Afficher la description</button>
-                        <div id="desc3" class="comment-section" style="display: none;"> 
-                            MrRTF : Cette carte représente l'indice multi-résolution de planéité de la crête (MrRTF), 
-                            mettant en évidence les zones de crêtes bien définies (en rouge) par rapport aux pentes 
-                            et aux zones plus basses (en bleu). 
-                            Nous pouvons constater que la morphologie du relief présente une partie haute et plane 
-                            et une partie plus encaissée comportants des zones basses encaissées.
-
-                            Sources : PACUNAM, JAXA
-                            
-                        </div>
-                        
-                        <a href="maps/LIDAR/MRVBF_Est.pdf" class="list-group-item">MRVBF (Estimation) (PDF)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc4')">Afficher la description</button>
-                        <div id="desc4" class="comment-section" style="display: none;"> 
-                            MrVBF : Cette carte représente l'indice de multi-résolution d'aplatissement de fond de vallée (MrVBF) 
-                            dans la région étudiée, mettant en évidence les zones planes (en rouge) et les vallées plus encaissées 
-                            ou humides (en bleu). 
-                            Nous avons combiné la résolution du LiDAR et la résolution de la données JAXA pour compléter les zones. 
-                            Nous pouvons constater la concordance des valeurs entre les deux échelles.
-
-                            Source : PACUNAM, JAXA
-                            
-                            
-                        </div>
-                        
-                        <a href="maps/LIDAR/MRVBF.pdf" class="list-group-item">MRVBF (PDF)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc5')">Afficher la description</button>
-                        <div id="desc5" class="comment-section" style="display: none;"> 
-                            MrVBF : Cette carte représente l'indice de multi-résolution d'aplatissement de fond de vallée (MrVBF) 
-                            dans la région étudiée, mettant en évidence les zones planes (en rouge) 
-                            et les vallées plus encaissées ou humides (en bleu). Nous avons combiné la résolution du LiDAR 
-                            et la résolution de la données JAXA pour compléter les zones. 
-                            Nous pouvons constater la concordance des valeurs entre les deux échelles.
-
-                            Source : PACUNAM, JAXA
-                            
-                            
-                        </div>
                         <a href="maps/LIDAR/relief_hydro.png" class="list-group-item">Relief Hydrologique (PNG)</a>
-                        <a href="maps/LIDAR/RRIM.png" class="list-group-item">RRIM (PNG)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc6')">Afficher la description</button>
-                        <div id="desc6" class="comment-section" style="display: none;"> 
-                            Red Relief Image Model. Cette carte est une représentation de la cité maya de Naachtun avec une combinaison de calculs. Il s’agit du la pente combinée avec le calcul du ValleyRidge ((ouverture positive - ouverture négative)/2). Cette représentation permet de visualiser les aménagements réalisés par les sociétés maya lors de leur différentes phases d’essors et de déclins.
-                            Sources : PACUNAM
-                            
-                            
-                            
-                        </div>
+                        <button class="btn btn-sm btn-hydrologie mt-2" onclick="toggleDescription('desc2')">Afficher la description</button>
+                        <div id="desc2" class="comment-section">Cette carte montre le relief hydrologique de la région, 
+                            en utilisant les données LiDAR pour identifier 
+                            les réseaux d’écoulement et les bassins versants.</div>
 
-                        <a href="maps/LIDAR/TWI_Lidar.png" class="list-group-item">TWI LiDAR (PNG)</a>
+                        <a href="maps/LIDAR/RRIM.pdf" class="list-group-item">RRIM (PDF)</a>
+                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc3')">Afficher la description</button>
+                        <div id="desc3" class="comment-section">Red Relief Image Model. 
+                            Cette carte est une représentation de la cité maya de Naachtun 
+                            avec une combinaison de calculs. 
+                            Il s’agit du la pente combinée avec le calcul du ValleyRidge 
+                            ((ouverture positive - ouverture négative)/2). 
+                            Cette représentation permet de visualiser 
+                            les aménagements réalisés par les sociétés maya 
+                            lors de leur différentes phases d’essors et de déclins.
+                            Sources : PACUNAM</div>
+
+                        <a href="maps/LIDAR/TWI.pdf" class="list-group-item">TWI (PDF)</a>
+                        <button class="btn btn-sm btn-topographique mt-2" onclick="toggleDescription('desc4')">Afficher la description</button>
+                        <div id="desc4" class="comment-section">Le TWI (Topographic Wetness Index) permet de localiser 
+                            les zones susceptibles de retenir l'eau. 
+                            Ces zones sont essentielles 
+                            pour comprendre les pratiques agricoles des Mayas.</div>
                     </div>
                 </div>
             </div>
 
             <!-- Colonne Satellites -->
-            <div class="col-md-6">
+            <div class="col-md-4">
                 <div class="content-section">
                     <h2 class="text-center">Données Satellites</h2>
                     <div class="list-group">
                         <a href="maps/Satellite/BassinVersant.pdf" class="list-group-item">Bassins Versants (PDF)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc7')">Afficher la description</button>
-                        <div id="desc7" class="comment-section" style="display: none;"> 
-                            Carte représentant les bassins versants et le réseau hydrographique. 
+                        <button class="btn btn-sm btn-hydrologie mt-2" onclick="toggleDescription('desc5')">Afficher la description</button>
+                        <div id="desc5" class="comment-section">Carte représentant les bassins versants et le réseau hydrographique. 
                             Issue de la donnée Jaxa, 
-                            nous pouvons voir les grand ensembles hydrographiques sur cette zone ainsi que les lignes d’écoulement.
+                            nous pouvons voir les grand ensembles hydrographiques 
+                            sur cette zone ainsi que les lignes d’écoulement.
 
-                            Source : JAXA
-                            
-                        </div>
-
-                        <a href="maps/Satellite/map_relief_jaxa_lidar.png" class="list-group-item">Relief JAXA-LiDAR (PNG)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc8')">Afficher la description</button>
-                        <div id="desc8" class="comment-section" style="display: none;"> 
-                            Carte du Relief du Nord Petén. 
-                            Cette carte montre les côteaux et les zones de pentes dans la région du Nord Petén. 
-                            Nous avons ici combiné les données LiDAR du programme PLI2 avec les images satellites de la JAXA. 
-                            Ces deux sources d’informations se complètent ici et apportent de la continuité 
-                            et de la précision dans nos visualisations.
-                            Source : JAXA, PACUNAM
-                            
-                            
-                        </div>
-
-                        <a href="maps/Satellite/NDVI_carte.pdf" class="list-group-item">NDVI (PDF)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc9')">Afficher la description</button>
-                        <div id="desc9" class="comment-section" style="display: none;"> Carte du NDVI : 
-                            Le NDVI (Normalized Difference Vegetation Index), ou indice de végétation normalisé, 
-                            est l'un des indices les plus utilisés pour quantifier la végétation sur des images satellites. 
-                            Il est calculé à partir des valeurs de réflectance dans les bandes rouges (ROUGE​) 
-                            et proche infrarouge (NIR), qui sont particulièrement sensibles à la chlorophylle 
+                            Source : JAXA</div>
+                        
+                        <a href="maps/Satellite/NDVI.pdf" class="list-group-item">NDVI (PDF)</a>
+                        <button class="btn btn-sm btn-vegetation mt-2" onclick="toggleDescription('desc6')">Afficher la description</button>
+                        <div id="desc6" class="comment-section">Le NDVI (Normalized Difference Vegetation Index), 
+                            ou indice de végétation normalisé, 
+                            est l'un des indices les plus utilisés pour quantifier la végétation 
+                            sur des images satellites. 
+                            Il est calculé à partir des valeurs de réflectance 
+                            dans les bandes rouges (ROUGE​) 
+                            et proche infrarouge (NIR), 
+                            qui sont particulièrement sensibles à la chlorophylle 
                             et à la structure des plantes.
 
-                            Source : Sentinel-2
-                            
-                        </div>
+                            Source : Sentinel-2</div>
 
                         <a href="maps/Satellite/NDWI_carte.pdf" class="list-group-item">NDWI (PDF)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc10')">Afficher la description</button>
-                        <div id="desc10" class="comment-section" style="display: none;"> Carte du NDWI:
-                            
-                        </div>
-
+                        <button class="btn btn-sm btn-hydrologie mt-2" onclick="toggleDescription('desc7')">Afficher la description</button>
+                        <div id="desc7" class="comment-section">Carte du NDWI: Le NDWI (Normalized Difference Water Index) 
+                            met en évidence les zones humides et les plans d'eau, 
+                            essentiels pour comprendre la gestion hydrique des Mayas</div>
+                        
                         <a href="maps/Satellite/SAVI_carte.pdf" class="list-group-item">SAVI (PDF)</a>
-                        <a href="maps/Satellite/TWI.pdf" class="list-group-item">TWI (PDF)</a>
-                        <button class="btn btn-sm btn-info mt-2" onclick="toggleDescription('desc11')">Afficher la description</button>
-                        <div id="desc11" class="comment-section" style="display: none;"> Carte du TWI (Indice d’humidité topographique), 
-                            il met en évidence les zones de basses vallée avec une forte humiditée. 
-                            Ces zones représentées en bleues sont des dépressions calcaires (poljés). 
-                            Nous pouvons voir que les cités maya se sont installées à proximité de ces zones basses, 
-                            les utilisant comme ressource en eau.
-                            Source : JAXA
-                            
-                        </div>
+                        <button class="btn btn-sm btn-vegetation mt-2" onclick="toggleDescription('desc8')">Afficher la description</button>
+                        <div id="desc8" class="comment-section">Le SAVI (Soil Adjusted Vegetation Index) ajuste l'indice NDVI 
+                            pour les zones où le sol est plus visible, 
+                            offrant une meilleure analyse dans les zones semi-arides.</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Colonne Traitements Combinés -->
+            <div class="col-md-4">
+                <div class="content-section">
+                    <h2 class="text-center">Traitements Combinés</h2>
+                    <div class="list-group">
+                        <a href="maps/LIDAR_SAT/map_relief_jaxa_lidar.png" class="list-group-item">Relief JAXA-LiDAR (PNG)</a>
+                        <button class="btn btn-sm btn-topographique mt-2" onclick="toggleDescription('desc9')">Afficher la description</button>
+                        <div id="desc9" class="comment-section">Cette carte combine les données LiDAR et JAXA 
+                            pour visualiser les zones de pentes et les vallées dans la région 
+                            du Nord Petén. 
+                            Elle illustre comment les seuils topographiques définis avec le LiDAR 
+                            ont été ajustés pour une extrapolation des données JAXA, 
+                            permettant une couverture homogène des zones non couvertes.</div>
+
+                        <a href="maps/LIDAR_SAT/MRRTF.pdf" class="list-group-item">MRRTF (PDF)</a>
+                        <button class="btn btn-sm btn-topographique mt-2" onclick="toggleDescription('desc10')">Afficher la description</button>
+                        <div id="desc10" class="comment-section">Le MRRTF (indice de planéité de crête multi-résolution) combine 
+                            les données LiDAR et PALSAR pour des analyses topographiques 
+                            détaillées.</div>
+
+                        <a href="maps/LIDAR_SAT/MRVBF.pdf" class="list-group-item">MRVBF (PDF)</a>
+                        <button class="btn btn-sm btn-hydrologie mt-2" onclick="toggleDescription('desc11')">Afficher la description</button>
+                        <div id="desc11" class="comment-section">Le MRVBF (indice multi-résolution des fonds de vallées) 
+                            identifie les zones basses et planes, 
+                            cruciales pour les études hydrologiques.</div>
                     </div>
                 </div>
             </div>
         </div>
-    <!-- Section Analyses et Conclusions -->
-    <div class="content-section mt-5">
-        <h2 class="text-center">Analyses</h2>
-        <p class="text-justify">
-            Cette section présente les analyses effectuées à partir des cartes et des données LiDAR et JAXA. Les indices topographiques (TWI, MRRTF, MRVBF) ont permis d’identifier les zones basses et planes, ainsi que les structures anthropiques cachées sous la végétation dense. En complément, les analyses avec R ont mis en lumière les corrélations entre les différentes échelles de données, illustrées par les graphiques ci-dessous.
-        </p>
 
-        <!-- Graphique 1 -->
-        <div class="text-center">
-            <img src="maps/interpol/interpolation_graph2.png" alt="Graphique d'interpolation LiDAR et JAXA" class="img-fluid mb-4">
+        <!-- Légende -->
+        <div class="content-section legend-section">
+            <h3>Légende</h3>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #28a745;"></div> Végétation
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #dc3545;"></div> Topographique
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #007bff;"></div> Hydrologie ou autres
+            </div>
         </div>
-        <p>
-            <strong>Analyse :</strong> Le premier graphique montre qu’il n’existe pas de corrélation positive forte entre les indices calculés à partir des données JAXA et LiDAR. Cela indique qu’une simple interpolation des données JAXA ne suffit pas à reproduire les détails détectés par le LiDAR. Un affinage des modèles est donc nécessaire pour améliorer la précision.
-        </p>
 
-        <!-- Graphique 2 -->
-        <div class="text-center">
-            <img src="maps/interpol/interpolation_graph1.png" alt="Graphique des indices topographiques LiDAR et JAXA" class="img-fluid mb-4">
+        <!-- Section Analyses -->
+        <div class="content-section mt-5">
+            <h2 class="text-center">Analyses</h2>
+            <p class="text-justify">
+                Cette section présente les analyses effectuées à partir des cartes et des données LiDAR et JAXA. Les indices topographiques (TWI, MRRTF, MRVBF) ont permis d’identifier les zones basses et planes, ainsi que les structures anthropiques cachées sous la végétation dense. En complément, les analyses avec R ont mis en lumière les corrélations entre les différentes échelles de données, illustrées par les graphiques ci-dessous.
+            </p>
+    
+            <!-- Graphique 1 -->
+            <div class="text-center">
+                <img src="maps/interpol/interpolation_graph2.png" alt="Graphique d'interpolation LiDAR et JAXA" class="img-fluid mb-4">
+            </div>
+            <p>
+                <strong>Analyse :</strong> Le premier graphique montre qu’il n’existe pas de corrélation positive forte entre les indices calculés à partir des données JAXA et LiDAR. Cela indique qu’une simple interpolation des données JAXA ne suffit pas à reproduire les détails détectés par le LiDAR. Un affinage des modèles est donc nécessaire pour améliorer la précision.
+            </p>
+    
+            <!-- Graphique 2 -->
+            <div class="text-center">
+                <img src="maps/interpol/interpolation_graph1.png" alt="Graphique des indices topographiques LiDAR et JAXA" class="img-fluid mb-4">
+            </div>
+            <p>
+                <strong>Conclusion :</strong> Le second graphique montre que l’ajout d’indices topographiques supplémentaires, tels que le MrVBF et le MrRTF, améliore la corrélation entre les deux échelles. Bien que la corrélation reste modérée (par exemple, 53 % entre MrVBF LiDAR et JAXA), ces résultats démontrent l’importance de combiner plusieurs indices pour obtenir une vision plus cohérente des caractéristiques du terrain.
+            </p>
+    
+            <!-- Synthèse -->
+            <p class="mt-4">
+                Ces analyses mettent en évidence les défis liés à l’interpolation et à la fusion des données issues de différentes sources et échelles. Elles montrent également l’importance des indices topographiques pour révéler les interactions complexes entre les Mayas et leur environnement. Les résultats obtenus serviront de base pour des recherches futures, notamment pour affiner les modèles hydrologiques et identifier les structures agraires anciennes.
+            </p>
         </div>
-        <p>
-            <strong>Conclusion :</strong> Le second graphique montre que l’ajout d’indices topographiques supplémentaires, tels que le MrVBF et le MrRTF, améliore la corrélation entre les deux échelles. Bien que la corrélation reste modérée (par exemple, 53 % entre MrVBF LiDAR et JAXA), ces résultats démontrent l’importance de combiner plusieurs indices pour obtenir une vision plus cohérente des caractéristiques du terrain.
-        </p>
-
-        <!-- Synthèse -->
-        <p class="mt-4">
-            Ces analyses mettent en évidence les défis liés à l’interpolation et à la fusion des données issues de différentes sources et échelles. Elles montrent également l’importance des indices topographiques pour révéler les interactions complexes entre les Mayas et leur environnement. Les résultats obtenus serviront de base pour des recherches futures, notamment pour affiner les modèles hydrologiques et identifier les structures agraires anciennes.
-        </p>
     </div>
 
-        
-    </main>
-
     <!-- Pied de page -->
-    <footer class="footer text-center py-3">
+    <footer>
         <p>&copy; 2024 Projet Naachtun | M2 G2M</p>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.9/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         function toggleDescription(id) {
             const element = document.getElementById(id);
@@ -230,4 +348,5 @@
         }
     </script>
 </body>
+
 </html>

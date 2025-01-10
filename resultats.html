@@ -5,13 +5,22 @@
     <title>Projet Naachtun - Résultats</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
+    <link href="css/styles_carto.css" rel="stylesheet">
     <link href="css/bg_image.css" rel="stylesheet">
+    <style>
+        .pdf-frame {
+            width: 100%;
+            height: 500px;
+            border: none;
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- En-tête avec navigation -->
     <header>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
             <a class="navbar-brand" href="#">Projet Naachtun</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -32,30 +41,78 @@
     <main class="container mt-4">
         <div class="content-section">
             <h1 class="text-center mb-4">Résultats</h1>
-            <p class="text-center">Cette section présente les résultats obtenus à l'issue des traitements effectués.</p>
+            <p class="text-center">Cette section présente les résultats obtenus à l'issue des traitements effectués. 
+                Chaque hypothèse est analysée et accompagnée des cartes et analyses correspondantes.</p>
         </div>
 
-        <div class="row">
-            <div class="col-md-6">
-                <div class="content-section">
-                    <h2 class="text-center">Résultats LiDAR</h2>
-                    <ul>
-                        <li>Identification des structures archéologiques (terrasses, réservoirs).</li>
-                        <li>Analyse des réseaux hydrologiques.</li>
-                        <li>Cartographie des zones planes et basses.</li>
-                    </ul>
-                </div>
+        <!-- Hypothèse 1 -->
+        <div class="content-section mt-4">
+            <h2>Hypothèse 1 : Transposition des travaux de la Pli1 à la Pli2</h2>
+            <p>Nous avons appliqué les mêmes chaînes de traitements sur la Pli2 
+                (500 km²) que sur la Pli1 (125 km²). 
+                Les résultats montrent que l'automatisation des tâches 
+                via des scripts a permis de reproduire efficacement les analyses 
+                sur une zone étendue.</p>
+            <div class="text-center">
+                <embed src="maps/LIDAR/RRIM.pdf" class="pdf-frame" type="application/pdf">
+                <embed src="maps/LIDAR_SAT/MRVBF.pdf" class="pdf-frame" type="application/pdf">
             </div>
-            <div class="col-md-6">
-                <div class="content-section">
-                    <h2 class="text-center">Résultats Satellites</h2>
-                    <ul>
-                        <li>Cartographie des indices de végétation (NDVI, NDWI).</li>
-                        <li>Visualisation des bassins versants et lignes d'écoulement.</li>
-                        <li>Comparaison des données multisources.</li>
-                    </ul>
-                </div>
+        </div>
+
+        <!-- Hypothèse 2 -->
+        <div class="content-section mt-4">
+            <h2>Hypothèse 2 : Spatialisation des zones humides et forêts sèches</h2>
+            <p>Les analyses LiDAR et JAXA ont permis d'identifier les zones 
+                humides (basses) et les zones de forêt sèche (hautes) 
+                à grande échelle. 
+                Bien que les interpolations montrent des différences 
+                dans les détails, 
+                elles fournissent une base utile pour la spatialisation 
+                de ces zones sur l'échelle 2.</p>
+            
+            <div class="text-center">
+                <!-- Graphique 1 -->
+                <img src="maps/interpol/interpolation_graph2.png" alt="Graphique d'interpolation LiDAR et JAXA" class="img-fluid mb-3">
+                <p><strong>Analyse :</strong> Le premier graphique illustre 
+                    l'absence de corrélation positive forte entre les indices 
+                    issus des données JAXA et LiDAR. 
+                    Cela démontre que des ajustements supplémentaires 
+                    sont nécessaires pour affiner les modèles.</p>
+                
+                <!-- Graphique 2 -->
+                <img src="maps/interpol/interpolation_graph1.png" alt="Graphique des indices topographiques LiDAR et JAXA" class="img-fluid mb-3">
+                <p><strong>Conclusion :</strong> L'ajout d'indices topographiques 
+                    (comme le MrVBF et le MrRTF) améliore significativement 
+                    la corrélation entre les deux échelles, 
+                    bien que celle-ci reste modérée (environ 53 %).</p>
             </div>
+            
+            <p><strong>Appui des résultats de l’interpolation :</strong> 
+                Ces analyses montrent l’importance d’une fusion 
+                des données multisources 
+                pour une meilleure interprétation environnementale, 
+                notamment dans les zones non couvertes par des relevés LiDAR précis.</p>
+        </div>
+
+
+
+        <!-- Hypothèse 3 -->
+        <div class="content-section mt-4">
+            <h2>Hypothèse 3 : Vectorisation et analyse critique</h2>
+            <p>Nous avons vectorisé 55,7 km de murets 
+                et réalisé des analyses topographiques sur les zones de terrassement. 
+                Ces résultats permettent de mieux comprendre l'organisation spatiale 
+                des infrastructures hydrauliques et agricoles des Mayas.</p>
+            <div class="text-center">
+                <embed src="maps/Terrasses/Terrasses.pdf" class="pdf-frame" type="application/pdf">
+                <a href="maps/Terrasses/Terrasses.pdf" target="_blank" class="btn btn-primary mt-3">Voir la carte des terrassements (PDF)</a>
+            </div>
+            <p><strong>Analyse critique :</strong> Bien que les résultats montrent 
+                une discrimination claire entre les zones hautes et basses, 
+                l’interpolation entre les rasters LiDAR et JAXA a révélé des limites, 
+                avec une absence de corrélation significative. 
+                Cela souligne la nécessité d'une validation terrain 
+                pour renforcer l'interprétation des données.</p>
         </div>
     </main>
 
@@ -63,5 +120,10 @@
     <footer class="footer text-center py-3">
         <p>&copy; 2024 Projet Naachtun | M2 G2M</p>
     </footer>
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.9/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
