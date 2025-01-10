@@ -153,7 +153,8 @@ L.control.layers(baseMaps).addTo(map);
                 div.innerHTML += `<div>${rang2Svg} Site de rang 2</div>`;
 
                 // Légende pour les polygones
-                div.innerHTML += '<div><span style="background-color: red; display:inline-block; width: 15px; height: 15px;"></span> Zone Échelle 1 (Img LiDAR)</div>';
+                div.innerHTML += '<div><span style="background-color: red; display:inline-block; width: 15px; height: 15px;"></span> Zone Échelle 1 (Img LiDAR : PLI1)</div>';
+                div.innerHTML += '<div><span style="background-color: red; display:inline-block; width: 15px; height: 15px;"></span> Zone Échelle 1 (Img LiDAR : PLI 2)</div>';
                 div.innerHTML += '<div><span style="background-color: blue; display:inline-block; width: 15px; height: 15px;"></span> Zone Échelle 2 (Img sat)</div>';
                 div.innerHTML += '<div><span style="background-color: green; display:inline-block; width: 15px; height: 15px;"></span> Zone Échelle 3 (Img sat)</div>';
                 return div;
