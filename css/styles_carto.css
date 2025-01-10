@@ -14,12 +14,14 @@
             border-radius: 8px;
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
             color: #fff;
-            margin-top: 20px;
+            margin-bottom: 20px;
         }
+
         
         .content-section h2 {
             color: #ffd700; /* Or Maya */
             margin-bottom: 15px;
+            margin-top: 20px;
         }
         
         .content-section ul {
@@ -69,3 +71,20 @@
         .comment-section strong {
             color: #ffd700;
         }
+
+        .resources a {
+            color: #ffd700;
+            text-decoration: none;
+        }
+        
+        .resources a:hover {
+            text-decoration: underline;
+        }
+
+        .img-fluid {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+        

@@ -1,10 +1,9 @@
 body {
     padding-top: 56px;
     background-image: url('img/bg_naachtun.jpg');
-    background-size: contain;
+    background-size: cover; /* Modification ici */
     background-repeat: no-repeat;
-    background-position: bottom;
-    ;
+    background-position: center; /* Modification ici */
     position: relative;
 }
 

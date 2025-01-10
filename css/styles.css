@@ -153,6 +153,8 @@ h1, h2 {
     }
 }
 
+
+
 canvas {
     margin: 20px 0;
     padding: 10px;
@@ -183,3 +185,32 @@ canvas {
     margin: 0;
     color: #fff;
 }
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-md-4 {
+    padding-right: 15px;
+    padding-left: 15px;
+    flex: 0 0 33.333%;
+    max-width: 33.333%;
+}
+
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+
+.map-description h3 {
+    color: #FFD700; /* Couleur jaune */
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+

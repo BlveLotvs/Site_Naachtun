@@ -1,0 +1,127 @@
+/* Styles généraux */
+body {
+    font-family: system-ui, sans-serif;
+    background-image: url("img/bg_naachtun.jpg"); /* Image de fond */
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Conteneur principal */
+.container-fluid {
+    max-width: 1200px; /* Ajustez la largeur pour correspondre à l'esthétique souhaitée */
+    margin: 0 auto;
+}
+
+
+/* Contenu de chaque section */
+.content-section {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h1,
+.content-section h2 {
+    color: #ffd700;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.content-section p {
+    text-align: center;
+}
+
+/* Colonne principale */
+.row {
+    display: flex;
+    flex-wrap: nowrap; /* Empêche les colonnes de s'empiler */
+    justify-content: space-between; /* Ajoute un espace entre les colonnes */
+}
+
+/* Colonnes flexibles */
+.col-md-4 {
+    flex: 1 1 0; /* Chaque colonne partage l'espace disponible */
+    max-width: 30%; /* Limite la largeur à environ un tiers */
+    margin: 0 10px; /* Ajoute de l'espacement horizontal */
+    box-sizing: border-box;
+}
+
+/* Alignement uniforme des colonnes */
+.d-flex {
+    display: flex;
+}
+
+.flex-fill {
+    flex: 1 1 auto;
+}
+
+/* Boutons et liens */
+.list-group-item {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    display: block;
+    padding: 10px 15px;
+}
+
+.list-group-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffd700;
+}
+
+.btn {
+    display: block;
+    margin: 10px 0;
+    background: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* Description des cartes */
+.comment-section {
+    margin-top: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    font-size: 0.9rem;
+    display: none;
+}
+
+/* Pied de page */
+footer {
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    margin-top: 20px;
+}
+
+/* Responsive : Colonnes empilées sur petits écrans */
+@media (max-width: 768px) {
+    .col-md-4 {
+        flex: 0 0 100%; /* Prend toute la largeur sur mobile */
+        max-width: 100%;
+    }
+
+    .content-section {
+        margin-bottom: 15px;
+    }
+}
